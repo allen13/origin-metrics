@@ -62,6 +62,7 @@ COPY cassandra-docker.sh \
      gather-seeds.sh \
      /opt/apache-cassandra/bin/
 
+ADD cassandra-env.sh /opt/apache-cassandra/conf/
 # Create a 'Cassandra' user to own the directory and set it to be readable & writable by any user
 RUN groupadd -r cassandra -g 312 && \
     useradd -u 313 -r -g cassandra -d /opt/apache-cassandra -s /sbin/nologin cassandra && \
